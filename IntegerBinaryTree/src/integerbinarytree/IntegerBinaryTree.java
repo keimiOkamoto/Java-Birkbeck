@@ -22,7 +22,7 @@ public class IntegerBinaryTree {
         System.out.println("It is " + root.contains(4) );
         root.toString();
         
-        System.out.println("");
+        System.out.println(root);
         
     }
     

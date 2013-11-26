@@ -26,7 +26,6 @@ public class IntegerTreeNode implements TreeNode {
         if (newNumber > this.value) {
             if (right == null) {
                 right = new IntegerTreeNode(newNumber);
-                
             } else {
                 right.add(newNumber);
             }
@@ -79,12 +78,37 @@ public class IntegerTreeNode implements TreeNode {
     }
     
     //Traverss throught the list REVISE
-    public String toString(){
-       boolean right = false;
-       if (this.left ) {
-       }
-      
-    }
+    public String toString() {
+        boolean right = false;
+        if (this.left != null) {
+            System.out.print("L[" + this.left.value);
+
+            if (this.right != null) {
+                System.out.print("R[" + this.right.value);
+            } else {
+                System.out.print("[]");
+            }
+
+            this.left.toString();
+            if (this.right != null) {
+                return this.right.toString();
+            }
+            return null;
+
+        } else if (this.right != null) {
+            System.out.print("R[" + this.right.value);
+
+            if (this.left != null) {
+                System.out.print("L[" + this.left.value);
+            } else {
+                System.out.print("[]");
+            }
+            return this.right.toString();
+
+        } else {
+            System.out.print("[]");
+            return null;
+        }
         
    /* Add a method depth() that returns the number of levels in a tree. By convention, 
       a tree with only one node (i.e. the root) has a depth of zero. 
@@ -145,4 +169,5 @@ public class IntegerTreeNode implements TreeNode {
         }
         
     }*/
+}
 }
