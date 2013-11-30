@@ -77,7 +77,40 @@ public class IntegerTreeNode implements TreeNode {
             }
     }
     
-    //Traverss throught the list REVISE
+    
+    
+    // Finds the depth of the tree
+    public int depth() {
+        
+        int l=0;
+        int r=0;
+        
+        if (left == null) {
+            return 0;
+        } else {
+
+            l += 1;
+            left.depth();
+        }
+        
+        if (right == null) {
+            return 0;
+        } else {
+            left.depth();
+            r += 1;
+        }
+        if (l > r) {
+            System.out.println("ffs");
+            return l;
+        } else {
+            System.out.println("right is bigger");
+            return r;
+        }
+        
+    }
+    
+    
+    //Travers throught the tree and prints out.
     public String toString() {
         String result = " ";
         result += value;
@@ -87,7 +120,6 @@ public class IntegerTreeNode implements TreeNode {
         } else {
             result += left; //left.toString(); 
         } 
-        
         if (right == null) {
             result += " R[] ";
         } else {
@@ -95,64 +127,20 @@ public class IntegerTreeNode implements TreeNode {
         }
         return result;
     }
-        
-   /* Add a method depth() that returns the number of levels in a tree. By convention, 
-      a tree with only one node (i.e. the root) has a depth of zero. 
-      Hint: the depths of the treesin Figure 1 are 0, 1, 2, and 3.
-      Hint: the depth of a tree is one more than the deepest of its subtreees.
-   
-       public int depth (){
-           
-       }
-       */
-        /*
     
-     if (this.left != null){
-            System.out.print("L["+this.left.value); 
-            
-            if (this.right != null) {
-                System.out.print("R[" + this.right.value);
-            } else {
-                System.out.print("[]");
-            }
-            
-            this.left.toString();
-            if (this.right != null){
-                return this.right.toString();
-            }
-            return null;   
-            
-        } else if (this.right !=null) {
-          System.out.print("R[" + this.right.value);
-          
-          if (this.left != null) {
-                System.out.print("L[" + this.left.value);
-            } else {
-                System.out.print("[]");
-            }
-            return this.right.toString();
-          
+    /*
+     if (left == null && leftCheck) {
+            return 0;
         } else {
-            System.out.print("[]");
-            return null;
-    
-    
-    ____________
-    if (this.left != null ) {
-            System.out.print("L["+ this.value);
-            return this.left.toString();
-            
-        } else {
-            System.out.print("L[]" );
-            
-            if (this.right != null){
-                System.out.println("R[" + this.value);
-                return this.right.toString();
-            } else {
-                System.out.println("R[]");
-            }
-            return null;
+            int l = left.depth() + 1;
+            return l;
         }
-        
-    }*/
+        if (right == null) {
+            return 0;
+        } else {
+            int r = right.depth() + 1;
+            return r;
+        }
+    */
+    
 }
