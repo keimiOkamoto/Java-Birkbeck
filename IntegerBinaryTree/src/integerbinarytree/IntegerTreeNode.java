@@ -80,31 +80,19 @@ public class IntegerTreeNode implements TreeNode {
     
     
     // Finds the depth of the tree
-    public int depth() {
+    public int depth(IntegerTreeNode root ) {
         
-        int l=0;
-        int r=0;
-        
-        if (left == null) {
-            return 0;
+        if (root == null) {
+            return -1;
         } else {
-
-            l += 1;
-            left.depth();
-        }
-        
-        if (right == null) {
-            return 0;
-        } else {
-            left.depth();
-            r += 1;
-        }
-        if (l > r) {
-            System.out.println("ffs");
-            return l;
-        } else {
-            System.out.println("right is bigger");
-            return r;
+            int leftDepth = depth(root.left);
+            int rightDepth = depth(root.right);
+            
+            if (leftDepth > rightDepth) {
+                return leftDepth + 1;
+            } else {
+                return rightDepth + 1;
+            }
         }
         
     }
