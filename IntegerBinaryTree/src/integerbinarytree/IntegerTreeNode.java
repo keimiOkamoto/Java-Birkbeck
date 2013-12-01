@@ -22,7 +22,6 @@ public class IntegerTreeNode implements TreeNode {
     
     // Adds a node
     public void add(int newNumber) {
-        
         if (newNumber > this.value) {
             if (right == null) {
                 right = new IntegerTreeNode(newNumber);
@@ -59,7 +58,6 @@ public class IntegerTreeNode implements TreeNode {
    
     // Retruns maximum number in the list, as in the biggest.
     public int getMax(){
-      
         if (this.right == null){
             return this.value;
         } else {
@@ -69,7 +67,6 @@ public class IntegerTreeNode implements TreeNode {
     
     // Retruns minimum number in the list, as in the biggest.
     public int getMin(){
-        
         if (this.left == null){
                 return this.value;
             } else {
@@ -80,8 +77,7 @@ public class IntegerTreeNode implements TreeNode {
     
     
     // Finds the depth of the tree
-    public int depth(IntegerTreeNode root ) {
-        
+    public int depth(IntegerTreeNode root) {
         if (root == null) {
             return -1;
         } else {
@@ -94,7 +90,6 @@ public class IntegerTreeNode implements TreeNode {
                 return rightDepth + 1;
             }
         }
-        
     }
     
     
@@ -116,19 +111,6 @@ public class IntegerTreeNode implements TreeNode {
         return result;
     }
     
-    /*
-     if (left == null && leftCheck) {
-            return 0;
-        } else {
-            int l = left.depth() + 1;
-            return l;
-        }
-        if (right == null) {
-            return 0;
-        } else {
-            int r = right.depth() + 1;
-            return r;
-        }
-    */
+
     
 }
